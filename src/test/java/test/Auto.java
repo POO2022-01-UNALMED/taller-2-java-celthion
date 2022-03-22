@@ -1,4 +1,5 @@
 package test;
+import java.util.*;
 
 public class Auto {
 	
@@ -31,10 +32,20 @@ public class Auto {
 	
 	String verificarIntegridad(){
 		int cont=0;
+		List<Asiento> testList = new ArrayList<>();
+		
 		for(int i = 0;i<this.asientos.length;i++) {
+			if(this.asientos[i] instanceof Asiento) {
+				testList.add(this.asientos[i]);
+				
+			}
+			
+		}
+		
+		for(int i = 0;i<testList.size();i++) {
 			int registro = this.registro;
 			int registrom = this.motor.registro;
-			int registroa = this.asientos[i].registro;
+			int registroa = testList.get(i).registro;
 			
 			
 			if(registroa == registrom && registroa==registro) {
