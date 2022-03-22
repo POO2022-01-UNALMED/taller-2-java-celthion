@@ -55,7 +55,7 @@ public class Auto {
 			
 		}
 		
-		if(cont==this.asientos.length) {
+		if(cont==testList.size()) {
 			return "Auto original";
 		}
 		
